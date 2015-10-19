@@ -3,24 +3,6 @@
    <head>
       <meta charset="utf-8" />
       <script src="ol.js" type="text/javascript">
-         function ausgabe( strAusgabe ){
-            if(!strAusgabe){ strAusgabe = "!";} // (***)
-            // alert( strAusgabe );
-            // console.log( strAusgabe );
-            document.getElementById('ausgabe').innerHTML = strAusgabe; // (*)
-         }
-         function position_ausgeben(){
-            // HTML5-Fähigkeit des Browsers abrufen
-            navigator.geolocation.getCurrentPosition( function (position){                 //(*)
-               // position ist ein Objekt, mit dem untergeordneten Objekt coords.
-               // coords enthält als Attribute Longitude und Latitude.
-               var posAusgabe = "Sie sind hier: ( Long "
-                                 + position.coords.longitude 
-                                 +" | Lat "
-                                 + position.coords.latitude + " )";
-               ausgabe(posAusgabe);
-            });                                                                         //(**)
-         }
       </script>
       <title>Wo ist Walter?</title>
    </head>
@@ -38,6 +20,25 @@
       <div id="map" style="height: 400px; width: 600px;border:1px solid #aaa;margin-top:11px;"></div>
       <!-- ein Bild zum Anzeigen der Position -->
       <img id="geolocation_marker" src="point.png" />
-      <script type="text/javascript">   </script>
+      <script type="text/javascript"> 
+         function ausgabe( strAusgabe ){
+            if(!strAusgabe){ strAusgabe = "!";} // (***)
+             alert( strAusgabe );
+            // console.log( strAusgabe );
+            document.getElementById('ausgabe').innerHTML = strAusgabe; // (*)
+         }
+         function position_ausgeben(){
+            // HTML5-Fähigkeit des Browsers abrufen
+            navigator.geolocation.getCurrentPosition( function (position){                 //(*)
+               // position ist ein Objekt, mit dem untergeordneten Objekt coords.
+               // coords enthält als Attribute Longitude und Latitude.
+               var posAusgabe = "Sie sind hier: ( Long "
+                                 + position.coords.longitude 
+                                 +" | Lat "
+                                 + position.coords.latitude + " )";
+               ausgabe(posAusgabe);
+            });                                                                         //(**)
+         }
+         </script>
    </body>
 </html>
